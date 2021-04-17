@@ -1,0 +1,32 @@
+/* -----Global Styles------- */
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* -----Home page styles---- */
+#Banner{
+    padding: 100px;
+    margin: 0;
+    width: 100%;
+    min-height: 400px;
+    background-image: url(../images/home-page-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#Banner-content{
+    color:lightblue;
+    padding: 40px;;
+    max-width: 600px;
+    background-color: rgba(1,1,1,0.4);
+    margin:0 auto 0 auto;
+}
+
