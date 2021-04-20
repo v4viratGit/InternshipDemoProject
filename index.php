@@ -1,3 +1,8 @@
+<?php
+    require 'dbconnection.php';
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +36,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="signup.php">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -55,7 +63,7 @@
             <div class="card-body">
                 <h5 class="card-title">NEET</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary">Buy now</a>
+                <a href="neet-course.php" class="btn btn-primary">Buy now</a>
             </div>
             </div>
         </div>
