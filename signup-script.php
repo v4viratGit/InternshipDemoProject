@@ -1,6 +1,6 @@
 <?php
 
-require '/home/vol1_5/epizy.com/epiz_24827857/htdocs/common.php';
+require 'dbconnection.php';
 
 if(isset($_POST['signup']))  
 {  
