@@ -41,17 +41,23 @@
                 Login
             </div>
             <div class="card-body">
-            <form method="POST" action="login-script.php">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" class="form-control" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="pass">Password:</label>
-                    <input type="password" name="pass" class="form-control" id="pass">
-                </div>
-                <button name="login" type="submit" class="btn btn-primary">Sign In</button>
-            </form>
+                <form action="signup-script.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="pass" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                         <input type="text" name="contact" class="form-control" placeholder="Contact">
+                    </div>        
+                    <div>
+                        <button name="signup" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
             <div class="card-footer text-muted">
                 Please enter details correctly
