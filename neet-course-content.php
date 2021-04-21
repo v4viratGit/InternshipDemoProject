@@ -1,10 +1,6 @@
 <?php
-require 'dbconnection.php';
-if (!(isset($_SESSION['email']))) 
-    {   
-        header('location: login.php'); 
-    } 
- 
+    require 'dbconnection.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +42,36 @@ if (!(isset($_SESSION['email'])))
             </ul>
         </div>
     </nav>
-    <!-- Content -->
-    <div class="container mt-3">
+    
+   <!-- Content -->
+   <div class="container mt-3">
         <div class="card mb-3">
-            <img class="card-img-top" height="350px" src="images/NEET-course.jpg" alt="Card image cap">
+            <video class="p-4" id="homevideo" width="50%" autoplay  controls onended="run()">
+                <source src="videos/v1.mp4" type='video/mp4'/>
+            </video>    
             <div class="card-body">
                 <h5 class="card-title">Welcome to our NEET course</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam accumsan nisi laoreet pellentesque. Donec in fermentum est. Maecenas sit amet massa risus. Morbi cursus ex vitae ipsum tempor iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla convallis tristique pretium. Cras varius pharetra magna nec commodo. Morbi risus ex, suscipit sed lorem sed, gravida convallis augue. Sed tristique ultricies justo, vehicula faucibus elit accumsan a. Sed eget feugiat risus, non aliquam enim. Nulla varius mi vitae placerat feugiat. Mauris condimentum risus eros, ut imperdiet orci volutpat et. Fusce bibendum cursus lacus, eget scelerisque nisi commodo ornare. Aliquam sed eros eu magna imperdiet auctor non at neque. Morbi fermentum porta tortor, ut aliquet lacus bibendum in. Pellentesque arcu orci, sodales ut porta vel, bibendum a quam.</p>
                 <p class="card-text"><small class="text-muted">Last updated 2021</small></p>
-                <a href="neet-course-content.php" class="btn btn-primary">Buy now</a>
             </div>
         </div>
     </div>
 
 
-
+    <!-- Javascript Logic -->
+    <script>
+        var List = ["v1.mp4", "v2.mp4", "v3.mp4"]
+        count = 0;
+        Player = document.getElementById("homevideo");
+        function run(){
+            count++;
+                if (count == List.length) 
+                    count = 0;
+                    var nextVideo = List[count];
+                    Player.src = "videos/"+nextVideo;
+                    Player.play();
+        };
+    </script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
