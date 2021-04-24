@@ -1,10 +1,8 @@
 <?php
-require 'dbconnection.php';
-if (!(isset($_SESSION['email']))) 
-    {   
-        header('location: login.php'); 
-    } 
- 
+    require 'dbconnection.php';
+    $email=$_SESSION['email'];
+    $query = "SELECT name FROM users WHERE email='$email'";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
 ?>
 
 <!DOCTYPE html>
@@ -46,18 +44,43 @@ if (!(isset($_SESSION['email'])))
             </ul>
         </div>
     </nav>
-    <!-- Content -->
-    <div class="container mt-3">
-        <div class="card mb-3">
-            <img class="card-img-top" height="350px" src="images/NEET-course.jpg" alt="Card image cap">
+<!-- Content -->
+
+    <div class="container">
+        <table class="table table-bordered mt-5">
+            <thead>
+                <tr>
+                <th scope="col">User's Name</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Course Details</th>
+                <th scope="col">Course Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?php 
+                    while ($row = $result->fetch_assoc()) {
+                        echo $row['name']."<br>";
+                    }?>
+                    </td>
+                    <td>NEET</td>
+                    <td>Complete NEET Course</td>
+                    <td>500 INR</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card">
+            <div class="card-header">
+                Buy right now
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Welcome to our NEET course</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam accumsan nisi laoreet pellentesque. Donec in fermentum est. Maecenas sit amet massa risus. Morbi cursus ex vitae ipsum tempor iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla convallis tristique pretium. Cras varius pharetra magna nec commodo. Morbi risus ex, suscipit sed lorem sed, gravida convallis augue. Sed tristique ultricies justo, vehicula faucibus elit accumsan a. Sed eget feugiat risus, non aliquam enim. Nulla varius mi vitae placerat feugiat. Mauris condimentum risus eros, ut imperdiet orci volutpat et. Fusce bibendum cursus lacus, eget scelerisque nisi commodo ornare. Aliquam sed eros eu magna imperdiet auctor non at neque. Morbi fermentum porta tortor, ut aliquet lacus bibendum in. Pellentesque arcu orci, sodales ut porta vel, bibendum a quam.</p>
-                <p class="card-text"><small class="text-muted">Last updated 2021</small></p>
-                <a href="billing-info.php" class="btn btn-primary">Buy now</a>
+                <h5 class="card-title">Get access to the course content</h5>
+                <p class="card-text">instantly after the payment is done</p>
+                <a href="neet-course-content.php" class="btn btn-primary">Confirm Payment</a>
             </div>
         </div>
     </div>
+
 
 
 
