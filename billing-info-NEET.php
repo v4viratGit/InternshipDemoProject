@@ -76,11 +76,17 @@
             <div class="card-body">
                 <h5 class="card-title">Get access to the course content</h5>
                 <p class="card-text">instantly after the payment is done</p>
-                <a href="neet-course-content.php" class="btn btn-primary">Confirm Payment</a>
+                <form action="buy-course-script.php" method="POST">
+                    <input type="hidden" name="course_name" value="NEET">
+                    <input type="hidden" name="course_description" value="Complete NEET Course">
+                    <input type="hidden" name="course_link" value="neet-course-content.php">
+                    <button name="buy" type="submit" class="btn btn-primary">Confirm Payment</button>
+                </form>
             </div>
         </div>
     </div>
 
+    
 
 
 

@@ -54,7 +54,7 @@ if (!(isset($_SESSION['email'])))
                 <h5 class="card-title">Welcome to our NEET course</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam accumsan nisi laoreet pellentesque. Donec in fermentum est. Maecenas sit amet massa risus. Morbi cursus ex vitae ipsum tempor iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla convallis tristique pretium. Cras varius pharetra magna nec commodo. Morbi risus ex, suscipit sed lorem sed, gravida convallis augue. Sed tristique ultricies justo, vehicula faucibus elit accumsan a. Sed eget feugiat risus, non aliquam enim. Nulla varius mi vitae placerat feugiat. Mauris condimentum risus eros, ut imperdiet orci volutpat et. Fusce bibendum cursus lacus, eget scelerisque nisi commodo ornare. Aliquam sed eros eu magna imperdiet auctor non at neque. Morbi fermentum porta tortor, ut aliquet lacus bibendum in. Pellentesque arcu orci, sodales ut porta vel, bibendum a quam.</p>
                 <p class="card-text"><small class="text-muted">Last updated 2021</small></p>
-                <a href="billing-info.php" class="btn btn-primary">Buy now</a>
+                <a href="billing-info-NEET.php" class="btn btn-primary">Buy now</a>
             </div>
         </div>
     </div>
