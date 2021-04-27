@@ -46,14 +46,19 @@
    <!-- Content -->
    <div class="container mt-3">
         <div class="card mb-3">
-            <video class="p-4" id="homevideo" width="50%" autoplay  controls onended="run()">
+            <video class="p-4" id="homevideo" width="50%"   controls onended="run()">
                 <source src="" type='video/mp4'/>
             </video>    
             <div class="card-body">
             <button  type="button"  class="btn btn-primary btn-md"  onclick="myfunction('v1.mp4')" style="padding:0 34px 0 34px;">content</button><br><br>
+            <button type="button"  class="btn btn-primary btn-md" onclick="window.open('exam.html');" id="m1" disabled>content 1 quiz</button><br><br>
 
             <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v2.mp4')" id="m2" style="padding:0 23px 0 23px;" disabled>about neet</button><br><br>
+            <button type="button"  class="btn btn-primary btn-md" onclick="window.open('exam.html');" id="e2" disabled>content 2 quiz</button><br><br>
+
             <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v3.mp4')"  id="m3" style="padding:0 15px 0 15px;"  disabled>exam pattren</button><br><br>
+            <button type="button"  class="btn btn-primary btn-md"  onclick="window.open('exam.html');"id="e3" disabled>content 3 quiz</button><br><br>
+
                 <h5 class="card-title">Welcome to our NEET course</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam accumsan nisi laoreet pellentesque. Donec in fermentum est. Maecenas sit amet massa risus. Morbi cursus ex vitae ipsum tempor iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla convallis tristique pretium. Cras varius pharetra magna nec commodo. Morbi risus ex, suscipit sed lorem sed, gravida convallis augue. Sed tristique ultricies justo, vehicula faucibus elit accumsan a. Sed eget feugiat risus, non aliquam enim. Nulla varius mi vitae placerat feugiat. Mauris condimentum risus eros, ut imperdiet orci volutpat et. Fusce bibendum cursus lacus, eget scelerisque nisi commodo ornare. Aliquam sed eros eu magna imperdiet auctor non at neque. Morbi fermentum porta tortor, ut aliquet lacus bibendum in. Pellentesque arcu orci, sodales ut porta vel, bibendum a quam.</p>
                 <p class="card-text"><small class="text-muted">Last updated 2021</small></p>
@@ -75,7 +80,51 @@
         //             Player.src = "videos/"+nextVideo;
         //             Player.play();
         // };
-        var videosList = ["v1.mp4","v2.mp4", "v3.mp4"]
+
+
+
+//         var videosList = ["v1.mp4","v2.mp4", "v3.mp4"]
+    
+//     var i,j,video_count;
+//     var videoPlayer = document.getElementById("homevideo");
+// function myfunction(b){
+// for(i=0;i<videosList.length;i++)
+// {
+//     if(videosList[i]===b)
+//     {
+//         video_count=i;
+//         break;
+//     }
+// }
+// videoPlayer.src="videos/"+videosList[video_count];
+// videoPlayer.play();
+
+// //videoPlayer.pause();
+
+// }
+// function run(){
+//     video_count++;
+//     if (video_count == videosList.length) 
+//       video_count = 0;
+//     var nextVideo = videosList[video_count];
+//     if(nextVideo==='v2.mp4')
+//     {
+//         document.getElementById("m2").disabled=false;
+//     }
+//     else if(nextVideo==='v3.mp4')
+//     {
+//         document.getElementById("m3").disabled=false;
+//     }
+//     else if(nextVideo==='v4.mp4')
+//     {
+//         document.getElementById("m4").disabled=false;
+//     }
+//     videoPlayer.src = "videos/"+nextVideo;
+//    videoPlayer.load();
+//     videoPlayer.play();
+//  };
+
+var videosList = ["v1.mp4","v2.mp4", "v3.mp4"]
     
     var i,j,video_count;
     var videoPlayer = document.getElementById("homevideo");
@@ -90,7 +139,7 @@ for(i=0;i<videosList.length;i++)
 }
 videoPlayer.src="videos/"+videosList[video_count];
 videoPlayer.play();
-
+document.getElementById("m1").disabled=false;
 //videoPlayer.pause();
 
 }
@@ -99,22 +148,29 @@ function run(){
     if (video_count == videosList.length) 
       video_count = 0;
     var nextVideo = videosList[video_count];
+    
+    
     if(nextVideo==='v2.mp4')
     {
         document.getElementById("m2").disabled=false;
+        document.getElementById("e2").disabled=false;
     }
     else if(nextVideo==='v3.mp4')
     {
         document.getElementById("m3").disabled=false;
+        document.getElementById("e3").disabled=false;
     }
     else if(nextVideo==='v4.mp4')
     {
         document.getElementById("m4").disabled=false;
+        document.getElementById("e4").disabled=false;
     }
-    videoPlayer.src = "videos/"+nextVideo;
+    videoPlayer.src ="videos/"+nextVideo;
    videoPlayer.load();
-    videoPlayer.play();
+   //videoPlayer.play();
  };
+  
+ 
   
     </script>
 

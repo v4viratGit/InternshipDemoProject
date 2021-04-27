@@ -1,0 +1,92 @@
+<html>
+   <head>
+    <style>
+        body{
+            margin:0% 20% 5% 20%;
+        }
+        input[type=number] {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding:5px;
+            
+            
+        }
+        input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+     
+    }
+        input[type=text] {
+            width: 100%;
+            border: 2px solid #ccc;
+            padding:5px;
+        }
+        input[type=radio]{
+            display: inlin-block;
+        }
+        #q{
+            color: white;
+            background-color: rgba(255,99,71) ;
+            border-radius: 5px;
+            margin: 0px;
+            padding: 8px;
+            display: block;
+        }
+        div{
+            
+            border: 2px solid #ccc;
+            margin: 5px;
+            padding:10px;
+        }
+        button
+        {
+            color: white;
+            background-color:  rgba(255,99,71);
+            width: 100%;
+           margin-left:5px;
+           padding-top:5px;
+           padding-bottom: 5px;
+        }
+    </style>
+   </head> 
+   <body>
+       <form>
+           <div>
+            <label id="q">question 1 </label><br>
+            <input type="radio" id="q11" name="q1" value="true" >
+            <label for="q11">true</label><br>
+            <input type="radio" id="q12" name="q1" value="false" >
+            <label for="q12">false</label><br>
+            
+           </div>
+           <div>
+            <label id="q">question 2  </label><br>
+            <input type="radio" id="q21" name="q2" value="true" >
+            <label for="q21">true</label><br>
+            <input type="radio" id="q22" name="q2" value="false" >
+            <label for="q22">false</label><br>
+            
+        </div>
+            <div>
+            <label id="q">question 3 
+                  </label><br>
+            <input type="radio" id="q31" name="q3" value="true">
+            <label for="q31">true</label><br>
+            <input type="radio" id="q32" name="q3" value="false" >
+            <label for="q32">false</label><br>
+            
+        </div>
+            <div>
+            <label id="q"> question 4 </label><br>
+            <input type="radio" id="q41" name="q4" value="true" >
+            <label for="q41">true</label><br>
+            <input type="radio" id="q42" name="q4" value="false" >
+            <label for="q42">false</label><br>
+       </div>
+          
+            
+       </form>
+       <button onclick="submitAnswer()">Submit Answer</button>
+       <script src="easy.js"></script>
+   </body>
+</html>
