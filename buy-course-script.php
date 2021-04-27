@@ -12,7 +12,7 @@ if(isset($_POST['buy']))
     $insert="insert into purchases (users_email,course_name,course_description,course_link) VALUE ('$users_email','$course_name','$course_description','$course_link')";
     if(mysqli_query($con,$insert))  
     {  
-        header('location: $course_link');
+        header("location:$course_link");
     }  
   
 }
