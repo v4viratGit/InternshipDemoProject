@@ -37,6 +37,9 @@
                     <a class="nav-link" href="signup.php">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link" href="my-courses.php">My Courses <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
