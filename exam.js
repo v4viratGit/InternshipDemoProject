@@ -56,8 +56,8 @@ var submitAnswer = function() {
   }
  
  if(marks>2){
-   alert(`u pass you got ${marks} marks in the exam`);
-   
+   alert(`u pass you got marks in the exam`);
+   window.location.href = "neet-course-content.php";
    
  }
  else if(marks<=2)

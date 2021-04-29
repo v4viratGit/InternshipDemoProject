@@ -46,18 +46,18 @@
    <!-- Content -->
    <div class="container mt-3">
         <div class="card mb-3">
-            <video class="p-4" id="homevideo" width="50%"   controls onended="run()">
+            <video class="p-4" id="homevideo" width="50%"  controlsList="nodownload" controls onended="run()">
                 <source src="" type='video/mp4'/>
             </video>    
             <div class="card-body">
             <button  type="button"  class="btn btn-primary btn-md"  onclick="myfunction('v1.mp4')" style="padding:0 34px 0 34px;">content</button><br><br>
-            <button type="button"  class="btn btn-primary btn-md" onclick="window.open('exam.html');" id="m1" disabled>content 1 quiz</button><br><br>
+            <button type="button"  class="btn btn-primary btn-md" onClick="window.location='exam.html';" id="m1" disabled>content 1 quiz</button><br><br>
 
             <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v2.mp4')" id="m2" style="padding:0 23px 0 23px;" disabled>about neet</button><br><br>
-            <button type="button"  class="btn btn-primary btn-md" onclick="window.open('exam.html');" id="e2" disabled>content 2 quiz</button><br><br>
+            <button type="button"  class="btn btn-primary btn-md" onClick="window.location='exam.html';" id="e2" disabled>content 2 quiz</button><br><br>
 
             <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v3.mp4')"  id="m3" style="padding:0 15px 0 15px;"  disabled>exam pattren</button><br><br>
-            <button type="button"  class="btn btn-primary btn-md"  onclick="window.open('exam.html');"id="e3" disabled>content 3 quiz</button><br><br>
+            <button type="button"  class="btn btn-primary btn-md"   onClick="window.location='exam.html';" id="e3" disabled>content 3 quiz</button><br><br>
 
                 <h5 class="card-title">Welcome to our NEET course</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam accumsan nisi laoreet pellentesque. Donec in fermentum est. Maecenas sit amet massa risus. Morbi cursus ex vitae ipsum tempor iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla convallis tristique pretium. Cras varius pharetra magna nec commodo. Morbi risus ex, suscipit sed lorem sed, gravida convallis augue. Sed tristique ultricies justo, vehicula faucibus elit accumsan a. Sed eget feugiat risus, non aliquam enim. Nulla varius mi vitae placerat feugiat. Mauris condimentum risus eros, ut imperdiet orci volutpat et. Fusce bibendum cursus lacus, eget scelerisque nisi commodo ornare. Aliquam sed eros eu magna imperdiet auctor non at neque. Morbi fermentum porta tortor, ut aliquet lacus bibendum in. Pellentesque arcu orci, sodales ut porta vel, bibendum a quam.</p>

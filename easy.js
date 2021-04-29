@@ -46,12 +46,13 @@ var submitAnswer = function() {
  
  if(marks>2){
    alert("u pass");
+   window.location.href = "neet-course-content.php";
  }
  else if(marks<=2)
  {
    
      var text=`you got less then 3 marks so apply for mentorship`
      alert(text); 
-     
+     window.location.href = "mentor.html";
  }
 };
