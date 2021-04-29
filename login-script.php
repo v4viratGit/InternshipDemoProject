@@ -11,7 +11,7 @@ if (isset($_POST['email']) and isset($_POST['pass']))
     if ($count == 1){
         $_SESSION['user_id'] = $email;
         $_SESSION['email'] = $email;
-        header('location: neet-course.php');
+        header('location: index.php');
     }
     else
     {

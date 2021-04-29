@@ -30,15 +30,40 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
+                <?php                 
+                    if (isset($_SESSION['email'])) 
+                    {                     
+                ?> 
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                    Welcome,
+                    <?php 
+                        while ($row = $result->fetch_assoc()) {
+                            echo $row['name']."!";
+                        }
+                    ?>
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="my-courses.php">My Courses <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
+                </li>   
+                <?php
+                    }else
+                    {
+                ?>  
                 <li class="nav-item active">
                     <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="signup.php">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
-                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </div>
     </nav>

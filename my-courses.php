@@ -21,8 +21,8 @@
     <title>Home</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light border-bottom border-primary mb-0" style="background-color: #e3f2fd;">
+   <!-- Navigation Bar -->
+   <nav class="navbar navbar-expand-lg navbar-light border-bottom border-primary mb-0" style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="index.php">Diapsi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,15 +30,40 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
+                <?php                 
+                    if (isset($_SESSION['email'])) 
+                    {                     
+                ?> 
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                    Welcome,
+                    <?php 
+                        while ($row = $result->fetch_assoc()) {
+                            echo $row['name']."!";
+                        }
+                    ?>
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="my-courses.php">My Courses <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
+                </li>   
+                <?php
+                    }else
+                    {
+                ?>  
                 <li class="nav-item active">
                     <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="signup.php">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
-                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </div>
     </nav>

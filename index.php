@@ -1,6 +1,11 @@
 <?php
     require 'dbconnection.php';
-    
+    if(isset($_SESSION['email']))
+    {
+        $email=$_SESSION['email'];
+        $query = "SELECT name FROM users WHERE email='$email'";
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,18 +35,40 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
+                <?php                 
+                    if (isset($_SESSION['email'])) 
+                    {                     
+                ?> 
                 <li class="nav-item active">
-                    <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="signup.php">Sign Up <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">
+                    Welcome,
+                    <?php 
+                        while ($row = $result->fetch_assoc()) {
+                            echo $row['name']."!";
+                        }
+                    ?>
+                    <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="my-courses.php">My Courses <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="logout.php">Log out <span class="sr-only">(current)</span></a>
+                </li>   
+                <?php
+                    }else
+                    {
+                ?>  
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="signup.php">Sign Up <span class="sr-only">(current)</span></a>
+                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </div>
     </nav>
@@ -76,7 +103,7 @@
             <div class="card-body">
                 <h5 class="card-title">JEE</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary">Buy now</a>
+                <a href="jee-course.php" class="btn btn-primary">Buy now</a>
             </div>
             </div>
         </div>
