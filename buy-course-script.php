@@ -8,11 +8,12 @@ if(isset($_POST['buy']))
     $course_name=$_POST['course_name']; 
     $course_description=$_POST['course_description'];
     $course_link=$_POST['course_link']; 
+    $course_amount=$_POST['course_amount'];
 
-    $insert="insert into purchases (users_email,course_name,course_description,course_link) VALUE ('$users_email','$course_name','$course_description','$course_link')";
+    $insert="insert into purchases (users_email,course_name,course_description,course_link,course_amount) VALUE ('$users_email','$course_name','$course_description','$course_link','$course_amount')";
     if(mysqli_query($con,$insert))  
     {  
-        header("location:$course_link");
+        header("location:checkout.php");
     }  
   
 }

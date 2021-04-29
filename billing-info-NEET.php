@@ -105,6 +105,7 @@
                     <input type="hidden" name="course_name" value="NEET">
                     <input type="hidden" name="course_description" value="Complete NEET Course">
                     <input type="hidden" name="course_link" value="neet-course-content.php">
+                    <input type="hidden" name="course_amount" value=500>
                     <button name="buy" type="submit" class="btn btn-primary">Confirm Payment</button>
                 </form>
             </div>

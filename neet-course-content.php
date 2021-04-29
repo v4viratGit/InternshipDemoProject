@@ -1,6 +1,11 @@
 <?php
     require 'dbconnection.php';
-    
+    if(isset($_SESSION['email']))
+    {
+        $email=$_SESSION['email'];
+        $query = "SELECT name FROM users WHERE email='$email'";
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    }
 ?>
 
 <!DOCTYPE html>

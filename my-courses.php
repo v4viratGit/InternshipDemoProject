@@ -1,6 +1,8 @@
 <?php
     require 'dbconnection.php';
-    
+    $email=$_SESSION['email'];
+    $query = "SELECT name FROM users WHERE email='$email'";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
 ?>
 
 <!DOCTYPE html>
@@ -77,11 +79,17 @@
              while ($row = $result->fetch_assoc()) {
                 echo $row['course_name']."<br>";
                 echo $row['course_description']."<br>";
+                if($row['course_link']=="neet-course-content.php"){
+                    echo "<a href='neet-course-content.php'>"."Go to course"."</a>";
+                }
+                else{
+                    echo "<a href='jee-course-content.php'>"."Go to course"."</a>";
+                }
+                echo $row['course_amount']."<br>";
             }
         ?>
+        
        
-    
-    
     
     
     

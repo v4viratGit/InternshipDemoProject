@@ -105,6 +105,7 @@
                     <input type="hidden" name="course_name" value="JEE">
                     <input type="hidden" name="course_description" value="Complete JEE Course">
                     <input type="hidden" name="course_link" value="jee-course-content.php">
+                    <input type="hidden" name="course_amount" value=500>
                     <button name="buy" type="submit" class="btn btn-primary">Confirm Payment</button>
                 </form>
             </div>
