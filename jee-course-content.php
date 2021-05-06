@@ -73,17 +73,18 @@
         </div>
     </nav>
     
-   <!-- Content -->
-   <div class="container mt-3">
+    <!-- Content -->
+    <div class="container mt-3">
         <div class="card mb-3">
-            <video class="p-4" id="homevideo" width="50%" autoplay  controls onended="run()">
-                <source src="" type='video/mp4'/>
+            <video class="p-4" id="homevideo" width="50%"  controlsList="nodownload" controls onended="run(); window.open('exam.html');">
+                <source src="v1.mp4" type='video/mp4'/>
             </video>    
             <div class="card-body">
-            <button  type="button"  class="btn btn-primary btn-md"  onclick="myfunction('v1.mp4')" style="padding:0 34px 0 34px;">Chapter 1</button><br><br>
-            <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v2.mp4')" id="m2" style="padding:0 23px 0 23px;" disabled>Chapter 2</button><br><br>
-            <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v3.mp4')"  id="m3" style="padding:0 15px 0 15px;"  disabled>Chapter 3</button><br><br>
-                <h5 class="card-title">Welcome to our NEET course</h5>
+            <button  type="button"  class="btn btn-primary btn-md"  onclick="myfunction('v1.mp4')" style="padding:0 34px 0 34px;">chapter 1</button><br>
+            <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v2.mp4')" id="m2" style="padding:0 23px 0 23px;" disabled>chapter 2</button><br>
+            <button type="button"  class="btn btn-primary btn-md" onclick="myfunction('v3.mp4')"  id="m3" style="padding:0 15px 0 15px;"  disabled>chapter 3</button><br>
+
+                <h5 class="card-title">Welcome to our JEE course</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam accumsan nisi laoreet pellentesque. Donec in fermentum est. Maecenas sit amet massa risus. Morbi cursus ex vitae ipsum tempor iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla convallis tristique pretium. Cras varius pharetra magna nec commodo. Morbi risus ex, suscipit sed lorem sed, gravida convallis augue. Sed tristique ultricies justo, vehicula faucibus elit accumsan a. Sed eget feugiat risus, non aliquam enim. Nulla varius mi vitae placerat feugiat. Mauris condimentum risus eros, ut imperdiet orci volutpat et. Fusce bibendum cursus lacus, eget scelerisque nisi commodo ornare. Aliquam sed eros eu magna imperdiet auctor non at neque. Morbi fermentum porta tortor, ut aliquet lacus bibendum in. Pellentesque arcu orci, sodales ut porta vel, bibendum a quam.</p>
                 <p class="card-text"><small class="text-muted">Last updated 2021</small></p>
             </div>
@@ -93,43 +94,108 @@
 
     <!-- Javascript Logic -->
     <script>
-        var videosList = ["v1.mp4","v2.mp4", "v3.mp4"]
-        var i,j,video_count;
-        var videoPlayer = document.getElementById("homevideo");
-        function myfunction(b){
-            for(i=0;i<videosList.length;i++)
-            {
-                if(videosList[i]===b)
-                {
-                    video_count=i;
-                    break;
-                }
-            }
-            videoPlayer.src="videos/"+videosList[video_count];
-            videoPlayer.play(); 
-        }
-        function run(){
-            video_count++;
-            if (video_count == videosList.length) 
-            video_count = 0;
-            var nextVideo = videosList[video_count];
-            if(nextVideo==='v2.mp4')
-            {
-                document.getElementById("m2").disabled=false;
-            }
-            else if(nextVideo==='v3.mp4')
-            {
-                document.getElementById("m3").disabled=false;
-            }
-            else if(nextVideo==='v4.mp4')
-            {
-                document.getElementById("m4").disabled=false;
-            }
-            videoPlayer.src = "videos/"+nextVideo;
-            videoPlayer.load();
-            videoPlayer.play();
-    };
-    </script>
+        // var List = ["v1.mp4", "v2.mp4", "v3.mp4"]
+        // count = 0;
+        // Player = document.getElementById("homevideo");
+        // function run(){
+        //     count++;
+        //         if (count == List.length) 
+        //             count = 0;
+        //             var nextVideo = List[count];
+        //             Player.src = "videos/"+nextVideo;
+        //             Player.play();
+        // };
+
+
+
+//         var videosList = ["v1.mp4","v2.mp4", "v3.mp4"]
+    
+//     var i,j,video_count;
+//     var videoPlayer = document.getElementById("homevideo");
+// function myfunction(b){
+// for(i=0;i<videosList.length;i++)
+// {
+//     if(videosList[i]===b)
+//     {
+//         video_count=i;
+//         break;
+//     }
+// }
+// videoPlayer.src="videos/"+videosList[video_count];
+// videoPlayer.play();
+
+// //videoPlayer.pause();
+
+// }
+// function run(){
+//     video_count++;
+//     if (video_count == videosList.length) 
+//       video_count = 0;
+//     var nextVideo = videosList[video_count];
+//     if(nextVideo==='v2.mp4')
+//     {
+//         document.getElementById("m2").disabled=false;
+//     }
+//     else if(nextVideo==='v3.mp4')
+//     {
+//         document.getElementById("m3").disabled=false;
+//     }
+//     else if(nextVideo==='v4.mp4')
+//     {
+//         document.getElementById("m4").disabled=false;
+//     }
+//     videoPlayer.src = "videos/"+nextVideo;
+//    videoPlayer.load();
+//     videoPlayer.play();
+//  };
+
+var videosList = ["v1.mp4","v2.mp4", "v3.mp4"]
+    
+    var i,j,video_count;
+    var videoPlayer = document.getElementById("homevideo");
+function myfunction(b){
+for(i=0;i<videosList.length;i++)
+{
+    if(videosList[i]===b)
+    {
+        video_count=i;
+        break;
+    }
+}
+videoPlayer.src="videos/"+videosList[video_count];
+videoPlayer.play();
+//document.getElementById("m1").disabled=false;
+document.getElementById("m1").style.display="block";
+//videoPlayer.pause();
+
+}
+function run(){
+    video_count++;
+    //window.open("exam.html");
+    if (video_count == videosList.length) 
+      video_count = 0;
+    //window.open("exam.html");
+    var nextVideo = videosList[video_count];
+    
+    
+    if(nextVideo==='v2.mp4')
+    {
+        document.getElementById("m2").disabled=false;
+    }
+    else if(nextVideo==='v3.mp4')
+    {
+        document.getElementById("m3").disabled=false;
+    }
+    else if(nextVideo==='v4.mp4')
+    {
+        document.getElementById("m4").disabled=false;
+    }
+    videoPlayer.src ="videos/"+nextVideo;
+   videoPlayer.load();
+   //videoPlayer.play();
+ };
+ </script>
+
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 

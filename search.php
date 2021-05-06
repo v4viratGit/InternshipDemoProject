@@ -72,83 +72,23 @@
             </ul>
         </div>
     </nav>
-    <!-- Banner -->
-    <div id="Banner">
-        <div id="Banner-content" class="border border-primary">
-                <h1>Learn on your schedule Study any topic, anytime.</h1>
-                <strong>Explore thousands of courses starting at ₹455 each.</strong>
-        </div>
-    </div>
-    <br>
-    <br>
-    <!-- Search bar -->
-    <div class="container">
-        <form action="search.php" method="GET">
-            <input name="search" type="search" placeholder="Get the answers to your questions here" aria-label="Search">
-            <button type="submit">Search</button>
-        </form>
-    </div>
-    <div class="container">
-        <!-- Courses -->
-        <h1>The world's largest selection of courses</h1>
-        <strong>Choose from 130,000 online video courses with new additions published every month</strong>
-        <!-- Courses cards -->>    
-        <div class="row row-cols-2 row-cols-md-4">
-        <div class="col mb-4">
-            <div class="card">
-            <img src="images/NEET-card.jpg" class="card-img-top" alt="course1">
-            <div class="card-body">
-                <h5 class="card-title">NEET</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a href="neet-course.php" class="btn btn-primary">Buy now</a>
-            </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card">
-            <img src="images/JEE-card.jpg" class="card-img-top" alt="course2">
-            <div class="card-body">
-                <h5 class="card-title">JEE</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a href="jee-course.php" class="btn btn-primary">Buy now</a>
-            </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card">
-            <img src="images/UPSC-card.jpg" class="card-img-top" alt="course3">
-            <div class="card-body">
-                <h5 class="card-title">UPSC</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Buy now</a>
-            </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card">
-            <img src="images/CAT-card.jpg" class="card-img-top" alt="course4">
-            <div class="card-body">
-                <h5 class="card-title">CAT</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary">Buy now</a>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
+   <?php
+        $search=$_GET["search"];
+        $sql="SELECT * FROM forum WHERE MATCH(question) AGAINST ('%" . $search . "%')";
+        $run=mysqli_query($con,$sql) or die(mysqli_error($con));
+        $foundNum=mysqli_num_rows($run);
+        if($foundNum==0){
+            echo "Sorry! we don't have the answer to your question, We'll try to post the answer within 24 hours.";
+        } else
+            {
+            echo "<h1>$foundNum results found for your query $search</h1>";
+            $getQuery=mysqli_query($con,$sql);
+            while($runRows=mysqli_fetch_array($getQuery)){
+                echo $runRows['question'];   
+            }
 
-
+        }
+   ?>
 
 
 
