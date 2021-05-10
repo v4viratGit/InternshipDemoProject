@@ -85,6 +85,26 @@
     <div class="container">
         <form action="search.php" method="GET">
             <input name="search" type="search" placeholder="Get the answers to your questions here" aria-label="Search">
+            <label for="NEET">
+                NEET
+                <input type="radio" id="NEET" name="course" value="NEET">
+              </label>
+              <label for="JEE">
+                JEE
+                <input type="radio" id="JEE" name="course" value="JEE">
+              </label>
+              <label for="UPSC">
+                UPSC
+                <input type="radio" id="UPSC" name="course" value="UPSC">
+              </label>
+              <label for="CA">
+                CA
+                <input type="radio" id="CA" name="course" value="CA">
+              </label>
+              <label for="CS">
+                CS
+                <input type="radio" id="CS" name="course" value="CS">
+              </label>
             <button type="submit">Search</button>
         </form>
     </div>

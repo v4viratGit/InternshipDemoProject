@@ -73,19 +73,22 @@
         </div>
     </nav>
    <?php
-        $search=$_GET["search"];
-        $sql="SELECT * FROM forum WHERE MATCH(question) AGAINST ('%" . $search . "%')";
-        $run=mysqli_query($con,$sql) or die(mysqli_error($con));
-        $foundNum=mysqli_num_rows($run);
-        if($foundNum==0){
-            echo "Sorry! we don't have the answer to your question, We'll try to post the answer within 24 hours.";
-        } else
-            {
-            echo "<h1>$foundNum results found for your query $search</h1>";
-            $getQuery=mysqli_query($con,$sql);
-            while($runRows=mysqli_fetch_array($getQuery)){
-                echo $runRows['question'];   
-            }
+         $search=$_GET["search"];
+         $course=$_GET["course"];
+         $sql="SELECT * FROM $course WHERE MATCH(question) AGAINST ('%" . $search . "%')";
+         $run=mysqli_query($con,$sql) or die(mysqli_error($con));
+         $foundNum=mysqli_num_rows($run);
+         if($foundNum==0){
+             echo "Sorry! we don't have the answer to your question, We'll try to post the answer within 24 hours.";
+             $insertQuery="insert into queries (question) VALUE ('$search, $course')";
+             $run=mysqli_query($con,$insertQuery) or die(mysqli_error($con));
+         } else
+             {
+             echo "<h1>$foundNum results found for your query $search</h1>";
+             $getQuery=mysqli_query($con,$sql);
+             while($runRows=mysqli_fetch_array($getQuery)){
+                 echo $runRows['question'];   
+             }
 
         }
    ?>
