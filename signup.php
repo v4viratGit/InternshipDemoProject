@@ -41,7 +41,7 @@
                 Login
             </div>
             <div class="card-body">
-                <form action="signup-script.php" method="POST">
+                <form action="signup-script.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Name">
                     </div>
@@ -53,7 +53,9 @@
                     </div>
                     <div class="form-group">
                          <input type="text" name="contact" class="form-control" placeholder="Contact">
-                    </div>        
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="profilePhoto" id="profilePhoto">
                     <div>
                         <button name="signup" type="submit" class="btn btn-primary">Submit</button>
                     </div>

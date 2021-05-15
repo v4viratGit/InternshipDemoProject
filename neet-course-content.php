@@ -170,6 +170,7 @@ document.getElementById("m1").style.display="block";
 
 }
 function run(){
+    var isExamOver=localStorage.getItem("exam");
     video_count++;
     //window.open("exam.html");
     if (video_count == videosList.length) 
@@ -177,16 +178,15 @@ function run(){
     //window.open("exam.html");
     var nextVideo = videosList[video_count];
     
-    
-    if(nextVideo==='v2.mp4')
+    if((nextVideo==='v2.mp4')&&(isExamOver==="over"))
     {
         document.getElementById("m2").disabled=false;
     }
-    else if(nextVideo==='v3.mp4')
+    else if((nextVideo==='v3.mp4')&&(isExamOver==="over"))
     {
         document.getElementById("m3").disabled=false;
     }
-    else if(nextVideo==='v4.mp4')
+    else if((nextVideo==='v4.mp4')&&(isExamOver==="over"))
     {
         document.getElementById("m4").disabled=false;
     }
@@ -195,7 +195,6 @@ function run(){
    //videoPlayer.play();
  };
  </script>
-
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 

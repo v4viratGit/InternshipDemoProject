@@ -15,7 +15,8 @@ if ($conn->query($sql) === TRUE) {
   echo '<script type="text/javascript">'; 
        // echo 'window.location.href = "neet-course-content.php";';
        echo 'alert("You have successfully applied for mentornship, please continue with your learning.");';
-       echo 'close();';
+       echo 'localStorage.setItem("exam", "over")';
+       echo ' window.close()';
         echo '</script>';
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;

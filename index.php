@@ -40,7 +40,7 @@
                     {                     
                 ?> 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="user.php">
                     Welcome,
                     <?php 
                         while ($row = $result->fetch_assoc()) {

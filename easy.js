@@ -46,8 +46,8 @@ var submitAnswer = function() {
  
  if(marks>2){
    alert("Congratulations! You've passed the quiz.");
-   close();
-  //window.location.href = "neet-course-content.php";
+   localStorage.setItem("exam", "over");
+   window.close();
  }
  else if(marks<=2)
  {

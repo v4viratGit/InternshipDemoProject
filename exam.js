@@ -46,7 +46,8 @@ var submitAnswer = function() {
  
  if(marks>2){
    alert(`Congratulations! You've passed the quiz.`);
-   close();
+   localStorage.setItem("exam", "over");
+   window.close();
     
  }
  else if(marks<=2)
