@@ -85,9 +85,15 @@
         <!-- Courses -->
         <?php
              $email=$_SESSION['email'];
-             $query = "SELECT * FROM purchases WHERE users_email = '$email' ";
-             $result = mysqli_query($con, $query);
-        
+             $current_date_query="SELECT CURRENT_DATE()";
+             $current_date_result=mysqli_query($con,$current_date_query)or die(mysqli_error($con));
+             while ($current_date_row = mysqli_fetch_array($current_date_result)) {
+                $current_date=$current_date_row[0];
+             }
+             $delete_query="DELETE FROM purchases WHERE expiry='$current_date'";
+             mysqli_query($con,$delete_query)or die(mysqli_error($con));
+             $query = "SELECT * FROM purchases WHERE users_email='$email'";
+             $result = mysqli_query($con,$query)or die(mysqli_error($con));
              while ($row = $result->fetch_assoc()) {
                 echo $row['course_name']."<br>";
                 echo $row['course_description']."<br>";
