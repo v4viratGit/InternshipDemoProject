@@ -42,7 +42,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="user.php">
                     Welcome,
-                    <?php 
+                    <?php
                         while ($row = $result->fetch_assoc()) {
                             echo $row['name']."!";
                         }
