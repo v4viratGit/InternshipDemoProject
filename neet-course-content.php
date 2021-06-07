@@ -1,10 +1,22 @@
 <?php
     require 'dbconnection.php';
+    if (!(isset($_SESSION['email']))) 
+    {   
+        header('location: login.php'); 
+    } 
     if(isset($_SESSION['email']))
     {
         $email=$_SESSION['email'];
         $query = "SELECT name FROM users WHERE email='$email'";
         $result = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        $queryToCheckPurchase="SELECT * FROM purchases WHERE users_email='$email' and course_name='NEET'";
+        $runQueryToCheckPurchase=mysqli_query($con, $queryToCheckPurchase) or die(mysqli_error($con));
+        $check = mysqli_num_rows($runQueryToCheckPurchase);
+        if ($check != 1)
+        {
+            header('location: index.php');
+        }
     }
 ?>
 
