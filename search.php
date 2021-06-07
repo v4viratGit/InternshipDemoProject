@@ -80,7 +80,7 @@
          $foundNum=mysqli_num_rows($run);
          if($foundNum==0){
              echo "Sorry! we don't have the answer to your question, We'll try to post the answer within 24 hours.";
-             $insertQuery="insert into queries (question) VALUE ('$search, $course')";
+             $insertQuery="insert into jee_queries (question) VALUE ('$search, $course')";
              $run=mysqli_query($con,$insertQuery) or die(mysqli_error($con));
          } else
              {
