@@ -23,6 +23,34 @@
     <!-- styles.css -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Script for live search -->
+    <script>
+        $(document).ready(function(){
+            $('.search-box input[type="search"]').on("keyup input", function(){
+                /* Get input value on change */
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if(inputVal.length){
+                    $.get("backend-search.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else{
+                    resultDropdown.empty();
+                }
+            });
+            
+            // Set search input value on click of result item
+            $(document).on("click", ".result p", function(){
+                $(this).parents(".search-box").find('input[type="search"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+        });
+    </script>
+
     <title>Home</title>
 </head>
 <body>
@@ -83,7 +111,7 @@
     <br>
     <!-- Search bar -->
     <div class="container">
-        <form action="search.php" method="GET">
+        <form class="search-box"action="search.php" method="GET">
             <input name="search" type="search" placeholder="Get the answers to your questions here" aria-label="Search">
             <label for="NEET">
                 NEET
@@ -106,8 +134,10 @@
                 <input type="radio" id="CS" name="course" value="CS">
               </label>
             <button type="submit">Search</button>
+            <div class="result"></div>
         </form>
     </div>
+   
     <div class="container">
         <!-- Courses -->
         <h1>The world's largest selection of courses</h1>
@@ -168,18 +198,7 @@
     
    
 
-
-
-
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
-    crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
-    crossorigin="anonymous"></script>
+    
 
 </body>
 </html>
